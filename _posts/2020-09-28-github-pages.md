@@ -2,7 +2,7 @@
 layout: post
 title:  "github pagesについて"
 date:   2020-09-28 17:40:36 +0900
-categories: jekyll update
+categories:
 ---
 
 ## 概要
