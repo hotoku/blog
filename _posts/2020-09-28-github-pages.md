@@ -50,3 +50,11 @@ hotoku/blogレポジトリをgithubに作成し、gh-pagesブランチ以下にj
 `hotoku.github.io/blog`にトップページは正しく表示された。一方で、jekyllの作成するリンクが
 `hotoku.github.io/2020/09/28/github-pages.html`になってしまい、リンクをたどると404エラー。
 本来は`hotoku.github.io/blog/2020/09/28/github-pages.html`へのリンクを作成するべき。
+
+▶ 解決: `_config.yml`に`baseurl`という設定があった。
+
+### CSS他
+- CSS
+- タイトル
+- フッター
+- SNS
