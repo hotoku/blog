@@ -58,6 +58,3 @@ hotoku/blogレポジトリをgithubに作成し、gh-pagesブランチ以下にj
 - タイトル
 - フッター
 - SNS
-
-## テスト用
-1
