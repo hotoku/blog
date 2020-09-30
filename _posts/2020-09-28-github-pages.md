@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "github pagesについて"
-date:   2020-09-28 17:40:36 +0900
+title: "github pagesについて"
+date: 2020-09-28 17:40:36 +0900
 categories:
 ---
 
