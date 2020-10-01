@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "凸包を求める安定なアルゴリズム"
-date:   2020-09-28 17:40:36 +0900
-categories:
+title: "凸包を求める安定なアルゴリズム"
+date: 2020-09-28 17:40:36 +0900
+categories: math
 ---
 
 
