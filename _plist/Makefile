@@ -20,7 +20,8 @@ stop:
 
 
 clean: stop
-	rm $< ~/Library/LaunchAgents/$(label).plist
+	rm ./$(label).plist
+	rm ~/Library/LaunchAgents/$(label).plist
 
 
 %: %.jinja
