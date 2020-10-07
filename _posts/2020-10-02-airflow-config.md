@@ -19,5 +19,5 @@ categories:
 > The number of task instances allowed to run concurrently by the scheduler
 
 
-## `max_active_runs_per_dag`
+## max_active_runs_per_dag
 > The maximum number of active DAG runs per DAG
