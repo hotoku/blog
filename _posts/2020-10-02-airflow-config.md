@@ -2,7 +2,7 @@
 layout: post
 title: Airflowの設定項目
 date: 2020-10-02 16:25:48 +0900
-categories:
+categories: airflow
 ---
 
 デフォルト設定のまま使っていたAirflowのBackfillに時間がかかって困ったので、並列度を上げるパラメータを調べた。
