@@ -31,6 +31,9 @@ github_username:  hotoku
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
+
+
 
 
 # Exclude from processing.
