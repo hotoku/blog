@@ -35,7 +35,7 @@ mvn archetype:generate \
 
 まぁどっちでも良さそう
 
-## groupId, artifactIdについて
+### groupId, artifactIdについて
 
 [公式][公式]を読むと・・
 
