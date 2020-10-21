@@ -2,7 +2,7 @@
 layout: post
 title: 言語実装パターン 1
 date: 2020-10-20 20:00:43 +0900
-categories:
+categories: 言語実装パターン
 ---
 
 ## 左再帰性
