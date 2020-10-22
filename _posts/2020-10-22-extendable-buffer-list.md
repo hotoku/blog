@@ -16,8 +16,15 @@ Backtrackパーサーを実装するときに、任意長のバッファが必�
 
 ```java
 class Buffer{
+  Lexer lexer;
   ArrayList<Token> buf;
   int p;
+
+  Buffer(lexer){
+    buf = new ArrayList<Token>();
+    p = 0;
+    push.add(lexer.nextToken());
+  }
 
   consume(){
     /* 1つ消費する */
@@ -27,10 +34,21 @@ class Buffer{
       p = 0;
       buf.clear();
     }
+    push.add(lexer.nextToken());
   }
 
   push(Token t){
     buf.add(t);
+  }
+
+  get(int i){
+    /* 現在の先頭からi番目の値を返す */
+    if(p+i >= buf.size()){
+      int n = p+i - (buf.size()-1); // 足らない要素の数
+      for(int i = 0; i < n; i++){
+        push(lexer.nextToken());
+      }
+    }
   }
 }
 ```
