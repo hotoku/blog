@@ -12,16 +12,18 @@ categories:
 ## 空のプロジェクトを手で作る
 EclipseなどのIDEを使えば自動で作ってくれると思うのだが、Emacsで書きたいので調べた。
 
-### [参考1][1], [参考2][2]
+### コマンド1
 
-以下のコマンドを叩けば良い。
+以下のコマンドを叩けば良い。[参考1][1], [参考2][2]
+
 ```
 mvn archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-simple -DarchetypeVersion=1.4
 ```
 
 group id/artifacto idなどを聞かれる
 
-### [参考3][3]
+### コマンド2
+もしくはこっち。[参考3][3]
 
 ```
 mvn archetype:generate \
@@ -31,22 +33,20 @@ mvn archetype:generate \
   -DartifactId={project-name}
   ```
 
-こっちは引数で指定するパターン。
-
-まぁどっちでも良さそう
+こっちは引数で指定するパターン。まぁどっちでも良さそう
 
 ### groupId, artifactIdについて
 
 [公式][公式]を読むと・・
 
-- group idは、そのプロジェクトを世界中で一意に識別できるもの。よくjavaで見る、ドメインをヒックリ返した文字列
-- artifact idは、version名を除いたjarファイルの名前
+- group idは、そのプロジェクトを世界中で一意に識別できるもの。よくjavaで見る、ドメインをヒックリ返した文字列のことであろう。
+- artifact idは、version名を除いたjarファイルの名前だそうです
 
 ## pacakgeについて
 
 [参考4][4]
 
-ソースの先頭に`package`を書くとそのクラスの所属するパッケージが定義される
+ソースの先頭に`package`を書くとそのクラスの所属するパッケージが定義される。
 
 ```java
 package info.hotoku;
