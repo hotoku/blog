@@ -34,7 +34,7 @@ class Buffer{
       p = 0;
       buf.clear();
     }
-    push.add(lexer.nextToken());
+    buf.add(lexer.nextToken());
   }
 
   push(Token t){
