@@ -188,6 +188,7 @@ c++から普通に標準出力に出力すれば、Pythonプロセスの標準�
 #include <Python.h>
 
 #include <cmath>
+#include <iostream>
 
 using namespace std;
 
@@ -202,6 +203,15 @@ norms func(const double& x, const double& y){
     sqrt(x*x + y*y)
   };
 }
+
+#ifdef HOTOKU_DEBUG
+
+int main(){
+  auto ret = func(1, 2);
+  cout << ret.one << "," << ret.two << endl;
+}
+
+#else
 
 static PyObject* hoge_func(PyObject *self, PyObject *args){
   double x, y;
@@ -239,12 +249,11 @@ static struct PyModuleDef hogemodule = {
 
 
 PyMODINIT_FUNC
-PyInit_hoge(void)
-{
+PyInit_hoge(void){
   return PyModule_Create(&hogemodule);
 }
 
-
+#endif
 
 // Local Variables:
 // flycheck-gcc-include-path: ("/usr/local/anaconda3/include/python3.8")
