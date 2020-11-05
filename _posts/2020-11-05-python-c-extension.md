@@ -150,7 +150,7 @@ Pythonは`import <パッケージ名>`すると、この規約に則った関数
 
 これも目をつぶってコピペする・・
 
-```
+```python
 from distutils.core import setup, Extension
 
 module1 = Extension('hoge',
