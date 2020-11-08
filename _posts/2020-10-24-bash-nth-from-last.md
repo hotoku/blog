@@ -2,7 +2,7 @@
 layout: post
 title: bashでn個前のコマンドとその引数
 date: 2020-10-24 15:22:09 +0900
-categories: bash
+tags: bash
 ---
 bashでは、`$_`で「直前のコマンドの引数」を参照できる。
 例えば、

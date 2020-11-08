@@ -2,7 +2,7 @@
 layout: post
 title: Javaの基本的なこと調査メモ
 date: 2020-10-19 09:40:38 +0900
-categories:
+tags:
 ---
 
 [言語実装パターン][lip]を写経するのでjavaの環境を用意したい。

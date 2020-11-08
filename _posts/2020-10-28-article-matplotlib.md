@@ -2,7 +2,7 @@
 layout: post
 title: matplotlibの神記事
 date: 2020-10-28 14:54:21 +0900
-categories: matplotlib python
+tags: matplotlib python
 ---
 
 [神記事][qiita]

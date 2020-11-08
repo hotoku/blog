@@ -2,7 +2,7 @@
 layout: post
 title: git submoduleの使い方
 date: 2020-10-29 14:35:16 +0900
-categories: git
+tags: git
 ---
 
 [マニュアル][manual]

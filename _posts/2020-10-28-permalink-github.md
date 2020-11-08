@@ -2,7 +2,7 @@
 layout: post
 title: GitHubでファイルのパーマリンクを取得する
 date: 2020-10-28 11:45:01 +0900
-categories: github
+tags: github
 ---
 
 GitHub上でファイルを眺めている時、普段は、URLにブランチ名が含まれている。

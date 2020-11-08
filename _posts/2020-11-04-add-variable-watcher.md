@@ -2,7 +2,7 @@
 layout: post
 title: 変数の更新をフックする
 date: 2020-11-04 18:00:27 +0900
-categories: emacs
+tags: emacs
 ---
 
 elispのデバッグに有用そうな関数を知ったのでメモ

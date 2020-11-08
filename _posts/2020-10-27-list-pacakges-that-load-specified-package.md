@@ -2,7 +2,7 @@
 layout: post
 title: 特定のパッケージをrequireしているパッケージを一覧する
 date: 2020-10-27 16:30:00 +0900
-categories: emacs
+tags: emacs
 ---
 
 特定のパッケージををロードしているパッケージを一覧する方法。

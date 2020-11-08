@@ -2,7 +2,7 @@
 layout: post
 title: emacsの正規表現の$と\'
 date: 2020-10-30 08:35:53 +0900
-categories: emacs
+tags: emacs
 ---
 
 emacsでメジャーモードを判定するにはauto-mode-alistというリストに拡張子とメジャーモード関数を登録する。

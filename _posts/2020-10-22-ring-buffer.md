@@ -2,7 +2,7 @@
 layout: post
 title: ring buffer （言語実装パターン 2）
 date: 2020-10-22 08:46:33 +0900
-categories: 言語実装パターン
+tags: 言語実装パターン
 ---
 LL(k)パーサーを作るのに、`k`個の先読みトークンを保存しておく。
 このためにring bufferを実装したい。つまり、

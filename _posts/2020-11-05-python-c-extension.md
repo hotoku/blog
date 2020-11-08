@@ -2,7 +2,7 @@
 layout: post
 title: PythonのC/C++拡張を書くための基礎知識
 date: 2020-11-05 20:14:26 +0900
-categories: python
+tags: python
 ---
 
 仕事でPythonの関数をC++で書き換えることがあったので、調べたことをまとめておく。

@@ -2,7 +2,7 @@
 layout: post
 title: jekyllのテーマをカスタマイズする
 date: 2020-10-02 09:32:21 +0900
-categories: jekyll
+tags: jekyll
 ---
 
 [参考](https://jekyllrb.com/docs/themes/)

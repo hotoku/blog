@@ -2,7 +2,7 @@
 layout: post
 title: 外れ値に強い線形回帰
 date: 2020-10-30 11:36:20 +0900
-categories: math python
+tags: math python
 ---
 
 外れ値が多いデータに対して線形回帰をするために、Scikit-learnにはHuberRegressorというクラスがある。

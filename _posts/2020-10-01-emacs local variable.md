@@ -2,7 +2,7 @@
 layout: post
 title: emacs local variable
 date: 2020-10-01 21:41:39 +0900
-categories: emacs
+tags: emacs
 ---
 
 

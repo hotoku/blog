@@ -2,7 +2,7 @@
 layout: post
 title: AnacondaのPythonを3.8に
 date: 2020-10-24 15:56:27 +0900
-categories: python anaconda
+tags: python anaconda
 ---
 
 [参考][so]

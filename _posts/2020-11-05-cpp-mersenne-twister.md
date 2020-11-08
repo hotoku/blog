@@ -2,7 +2,7 @@
 layout: post
 title: C++でメルセンヌ・ツイスター
 date: 2020-11-05 23:11:55 +0900
-categories: c++
+tags: c++
 ---
 
 ```c++

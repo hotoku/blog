@@ -2,7 +2,7 @@
 layout: post
 title: matplotlibでtickを削除
 date: 2020-10-28 14:44:00 +0900
-categories: matplotlib python
+tags: matplotlib python
 ---
 
 

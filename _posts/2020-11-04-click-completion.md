@@ -2,7 +2,7 @@
 layout: post
 title: clickで補完
 date: 2020-11-04 17:56:36 +0900
-categories: click python
+tags: click python
 ---
 
 
