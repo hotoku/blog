@@ -1,0 +1,27 @@
+---
+layout: default
+title: タグ一覧
+---
+
+
+
+{% assign sorted_tags = site.tags | sort %}
+{% for tag in sorted_tags %}
+{% assign vids = tag[1] | sort %}
+
+{% if vids != empty %}
+
+<h2 id="{{tag[0] | uri_escape | downcase}}">{{tag[0]}}</H2>
+<p>
+    {% for p in vids %}
+    <a href="{{ p.url }}">{{ p.title }}</a>
+    <span class="entry-date">
+        <time datetime="{{ p.date | date_to_xmlschema }}" itemprop="datePublished">{{ p.date | date: "%Y-%m-%d" }}</time>
+    </span>
+    <br />
+    {% endfor %}
+</p>
+
+{% endif %}
+
+{% endfor %}
