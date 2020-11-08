@@ -34,6 +34,9 @@ plugins:
   - jekyll-sitemap
 
 
+minima:
+  date_format: "%Y-%m-%d"
+
 
 
 # Exclude from processing.
