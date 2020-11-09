@@ -17,8 +17,12 @@ emacs 27に上げたら、漢字の表示がおかしくなってしまったの
 
 interactiveな関数はないぽいので、フォントを確認したい場所にカーソルを移動して`(font-at (point))`を実行する（`M-:`で実行する）。
 
-自分の環境では、漢字には`#<font-object "-*-PingFang SC-normal-normal-normal-*-12-*-*-*-p-0-iso10646-1">`が
-ひらがなには`#<font-object "-*-Hiragino Sans-normal-normal-normal-*-12-*-*-*-p-0-iso10646-1">`が使われているぽい。
+自分の環境では、
+
+- 漢字には`#<font-object "-*-PingFang SC-normal-normal-normal-*-12-*-*-*-p-0-iso10646-1">`が
+- ひらがなには`#<font-object "-*-Hiragino Sans-normal-normal-normal-*-12-*-*-*-p-0-iso10646-1">`が
+
+使われているぽい。
 
 ## 試行錯誤
 `.emacs.d`を消して実行すると、別のフォントが当たるので、`init.el`の何かが影響しているのは確か。しかし、目で見ても、明示的にフォントを設定している場所はない。
