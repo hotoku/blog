@@ -27,7 +27,8 @@ interactiveな関数はないぽいので、フォントを確認したい場所
 `dakrone-theme`と`yh/use-large-font`あたりを消しても変わらず。というか、`init.el`を全部コメントアウトしても変わらなかった。
 
 ターミナルから`emacs`コマンドで起動するときと、Finderでアイコンをダブルクリックしたときでフォントが変わっていることが分かった。
-これは奥が深そう・・
+これは奥が深そう・・。
+
 
 
 [qiita]: https://qiita.com/j8takagi/items/01aecdd28f87cdd3cd2c
