@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Python: 辞書からデータフレームに
+title: 辞書からデータフレームに
 date: 2020-11-06 16:47:03 +0900
 categories: python
 ---
