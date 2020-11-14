@@ -12,7 +12,9 @@ permalink: /tags/
 
 {% if vids != empty %}
 
-<h2 id="{{tag[0] | uri_escape | downcase}}">{{tag[0]}}</H2>
+<h2 id="{{tag[0] | uri_escape | downcase}}">
+    <span id="tag-{{tag[0] | uri_escape | downcase}}"></span>
+    {{tag[0]}}</H2>
 <p>
     {% for p in vids %}
     <span class="entry-date">
