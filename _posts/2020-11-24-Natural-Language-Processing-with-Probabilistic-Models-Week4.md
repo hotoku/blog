@@ -34,3 +34,11 @@ tags: coursera
 
 ### extrinsic evaluation
 - 得られたembeddingを他のタスクに応用し、その結果をもって評価すること
+
+## stochastic gradient descent
+- 1つのデータに対するロスが$$l(x_i, y_i)$$で与えられる時、データ全体に対するロスは$$\Sigma_i l(x_i, y_i)$$で
+  与えられる
+- この時、実際に最適化するのは$$\frac{1}{N}\Sigma_i l(x_i, y_i)$$にする
+- さらに、最適化の計算の際に使う勾配として$$\frac{1}{B}\Sigma_i \frac{\partial}{\partial \theta}l(x_i, y_i)$$を使うようにする
+
+ただし、$$N, B$$は、データ全体のサイズとバッチサイズ。こうすると、ロス関数と勾配のスケールが揃う。
