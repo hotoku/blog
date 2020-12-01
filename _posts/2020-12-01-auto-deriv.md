@@ -24,7 +24,7 @@ $$
 $$
 \frac{\partial l}{\partial W_1} =
 \frac{\partial l}{\partial z_1} \frac{\partial z_1}{\partial W_1} =
-\frac{\partial l}{\partial a_1} \frac{\partial a_1}{\partial z_1} \frac{\partial a_1}{\partial W_1} =
+\frac{\partial l}{\partial a_1} \frac{\partial a_1}{\partial z_1} \frac{\partial z_1}{\partial W_1} =
 \ldots
 $$
 
