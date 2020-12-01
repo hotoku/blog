@@ -15,4 +15,6 @@ trax というフレームワークを使う。
 
 ## GRU
 
+gated recurrent unit
+
 {% include figure.html url="/assets/img/gru.png" description="GRUのイメージ © Coursera" %}
