@@ -11,10 +11,3 @@ trax というフレームワークを使う。
 
 
 `trax.math.grad` : 数式処理してくれる
-
-
-## GRU
-
-gated recurrent unit
-
-{% include figure.html url="/assets/img/gru.png" description="GRUのイメージ © Coursera" %}
