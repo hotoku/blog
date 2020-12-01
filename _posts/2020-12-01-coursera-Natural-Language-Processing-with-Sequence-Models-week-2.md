@@ -1,6 +1,6 @@
 ---
 layout: post
-title: coursera Natural Language Processing with Sequence Models week 1
+title: coursera Natural Language Processing with Sequence Models week 2
 date: 2020-12-01 19:37:19 +0900
 tags: coursera
 ---
