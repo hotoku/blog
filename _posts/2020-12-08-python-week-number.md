@@ -22,6 +22,7 @@ d.isocalendar()[1]
 ```python
 from datetime import datetime
 datetime.strptime("2020-48-2", "%Y-%W-%w").date()
+# => datetime.date(2020, 12, 1)
 ```
 
 `isocalendar`の返す週番号と`strptime`に渡すべき週番号は1ずれているので注意。ガッデム
