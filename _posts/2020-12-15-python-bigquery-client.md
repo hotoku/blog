@@ -8,7 +8,7 @@ tags: python bigquery
 
 クエリ実行
 
-```
+```python
 import os
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="~/.config/gcloud/legacy_credentials/ユーザー名/adc.json"
 
@@ -23,18 +23,18 @@ job = client.query("select 1")
 ```
 
 データフレームで結果を取得
-```
+```python
 job.to_dataframe()
 ```
 
 処理量の確認
-```
+```python
 job.total_bytes_processed
 job.total_bytes_billed
 ```
 
 dry run
-```
+```python
 sql = "..."
 job1 = client.query(
     sql,
