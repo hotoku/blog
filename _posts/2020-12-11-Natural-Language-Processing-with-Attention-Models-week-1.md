@@ -76,3 +76,18 @@ recall/precisionを単語やn-gramを用いて計算する。単一の指標で�
 
 ### minimum bayes risk
 複数の候補文を生成し、それらの類似度を計算する（rougeなど）。自分以外の全候補文に対する類似度が最大のものを選ぶ。
+
+
+## dataset
+
+[opus](http://opus.nlpl.eu/) 翻訳文のデータセット
+
+## trax
+
+- `TDFS`というデータロードのためのクラスがある
+- bucketing. 1つのバッチに入っているデータの長さを大体同じにする（paddingが少なくなる）
+
+
+## その他
+
+[kerasでのseq2seqの説明](https://blog.keras.io/a-ten-minute-introduction-to-sequence-to-sequence-learning-in-keras.html)
