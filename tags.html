@@ -14,9 +14,9 @@ permalink: /tags/
 
 {% assign tagid = tag[0] | url_escape | downcase %}
 
-<input id="tags2-check-{{tagid}}" class="tags2-check" type="checkbox">
-<label class="tags2-label" for="tags2-check-{{tagid}}" id="tags2-{{tagid}}">{{tag[0]}}</label>
-<div class="tags2-content">
+<input id="tags-check-{{tagid}}" class="tags-check" type="checkbox">
+<label class="tags-label" for="tags-check-{{tagid}}" id="tags-{{tagid}}">{{tag[0]}}</label>
+<div class="tags-content">
     <ul>
         {% for p in vids %}
         <li>

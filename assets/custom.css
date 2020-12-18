@@ -3,20 +3,20 @@ a.tagname-home {
 }
 
 
-.tags2-check{
+.tags-check{
     display: none;
 }
-.tags2-label{
+.tags-label{
     display: block;
     margin-bottom: 1px;
 }
-.tags2-content{
+.tags-content{
     height: 0;
     opacity: 0;
     visibility: hidden;
     transition: .05s;
 }
-.tags2-check:checked + .tags2-label + .tags2-content{
+.tags-check:checked + .tags-label + .tags-content{
     background: #f0f0f0;
     height: auto;
     opacity: 1;

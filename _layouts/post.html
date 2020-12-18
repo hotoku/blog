@@ -15,7 +15,7 @@ layout: default
             {%- endif -%}
         </p>
         {% for tag in page.tags %}
-        <span><a href="/tags#tags2-{{tag | uri_escape | downcase}}">{{ tag }}</a></span>
+        <span><a href="/tags#tags-{{tag | uri_escape | downcase}}">{{ tag }}</a></span>
         {% endfor %}
     </header>
 
