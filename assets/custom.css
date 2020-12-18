@@ -1,3 +1,25 @@
 a.tagname-home {
     margin-left: 0.5em;
 }
+
+
+.tags-check{
+    display: none;
+}
+.tags-label{
+    display: block;
+    margin-bottom: 1px;
+}
+.tags-content{
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: .05s;
+}
+.tags-check:checked + .tags-label + .tags-content{
+    background: #f0f0f0;
+    height: auto;
+    opacity: 1;
+    padding: 10px;
+    visibility: visible;
+}
