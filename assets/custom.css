@@ -7,22 +7,18 @@ a.tagname-home {
     display: none;
 }
 .tags2-label{
-    background: #333;
-    color: #fff;
     display: block;
     margin-bottom: 1px;
-    padding: 10px;
 }
 .tags2-content{
-    border: 1px solid #333;
     height: 0;
     opacity: 0;
-    padding: 0 10px;
-    transition: .1s;
     visibility: hidden;
+    transition: .05s;
 }
 .tags2-check:checked + .tags2-label + .tags2-content{
-    height: 40px;
+    background: #f0f0f0;
+    height: auto;
     opacity: 1;
     padding: 10px;
     visibility: visible;
