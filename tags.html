@@ -17,11 +17,11 @@ permalink: /tags/
 <input id="tags-check-{{tagid}}" class="tags-check" type="checkbox">
 <label class="tags-label" for="tags-check-{{tagid}}" id="tags-{{tagid}}">{{tag[0]}}</label>
 <div class="tags-content">
-    <ul>
+    <ul class="tags-content-list">
         {% for p in vids %}
         <li>
             <span class="entry-date">
-                <time datetime="{{ p.date | date_to_xmlschema }}" itemprop="datePublished">{{ p.date | date: "%Y-%m-%d" }}</time>
+                <time style="width: 6em; display: inline-block" datetime="{{ p.date | date_to_xmlschema }}" itemprop="datePublished">{{ p.date | date: "%Y-%m-%d" }}</time>
             </span>
             <a href="{{ p.url }}">{{ p.title }}</a>
         </li>

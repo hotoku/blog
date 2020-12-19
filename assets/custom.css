@@ -23,3 +23,7 @@ a.tagname-home {
     padding: 10px;
     visibility: visible;
 }
+
+ul.tags-content-list{
+    margin-bottom: 0px;
+}
