@@ -3,6 +3,7 @@ a.tagname-home {
 }
 
 
+
 .tags-check{
     display: none;
 }
@@ -23,7 +24,12 @@ a.tagname-home {
     padding: 10px;
     visibility: visible;
 }
-
 ul.tags-content-list{
     margin-bottom: 0px;
+}
+span.k{
+    color: #0000ee;
+}
+span.kn{
+    color: #0000ee;
 }
