@@ -37,6 +37,15 @@ information bottle neckというらしい。
 
 というのが大体の手順。なんでこれで精度が上がるのか良く分からない・・
 
+以下の図は、Attentionを含んだencoder/decoderの実装の概要
+
+{% include figure.html url="/assets/img/NMTModel.png" description="Attentionの実装の概要 © Coursera" %}
+
+よく分かってないのは、この絵だと、入力の$$n$$単語目と出力の$$n$$単語目が同時に処理されていくように見えること。
+本来は、全ての入力が処理されてから出力の1個目（＝文章開始トークン）が処理されるはず。
+
+Attentionの処理内容の意味も含めて、kerasやTFのtutorialで勉強した方が良さそう。
+
 ## teacher forcing
 
 シーケンスを出力するモデルの場合、最初の1個目で外すと、その後も外れる可能性が高く、計算が無駄になりそう。
