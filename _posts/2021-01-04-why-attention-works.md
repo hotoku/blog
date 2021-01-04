@@ -2,7 +2,7 @@
 layout: post
 title: Attentionがなんで有効なのか
 date: 2021-01-04 15:43:52 +0900
-tags: math
+tags: math ml
 ---
 
 CourseraのNLPのspecializationの中でattentionを学んだのだが、なんで、このネットワークで精度が上がるのかがよく分からん・・と思っていたんだが、
