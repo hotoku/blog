@@ -52,6 +52,8 @@ Loggerはデフォルトで、親方向にログを転送する（しないよ�
 ### Handlers
 
 適切な場所にLogRecordをdispatchする。Loggerは複数のHandlerを持つことができる。
+Handlerの中にもEffective levelが設定できることに注意。
+
 例えば、
 
 - すべてのログをファイルに
