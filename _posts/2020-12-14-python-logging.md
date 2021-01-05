@@ -86,4 +86,4 @@ Handlerの中にもEffective levelが設定できることに注意。
 - WARN以上をstderrに吐き出すhandler
 - LoggerのデフォルトのlevelはINFOで、`-d`フラグを付けるとDEBUGに変わる
 
-というような感じが使いやすいか
+というような感じが使いやすいか。
