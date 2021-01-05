@@ -60,7 +60,8 @@ Handlerの中にもEffective levelが設定できることに注意。
 - エラー以上をstdoutに
 - criticalをEmailに
 
-出力する、ということをする場合には、3種類のHandlerをLoggerに設定すれば良い。
+出力する、ということをする場合には、それぞれのログレベルと宛先が設定された3種類のHandlerを作成し、
+それら全てをLoggerに設定すれば良い。
 
 アプリ開発者が気にする必要があるメソッドは
 
@@ -81,8 +82,8 @@ Handlerの中にもEffective levelが設定できることに注意。
 
 主に、lightなCLIを作る用途で考える
 
-- INFO以上を特定のファイルに吐き出し
-- WARN以上をstderrに吐き出し
-- フラグを付けたら、DEBUG以上をstderrに吐き出し
+- INFO以上を特定のファイルに吐き出すhandler
+- WARN以上をstderrに吐き出すhandler
+- LoggerのデフォルトのlevelはINFOで、`-d`フラグを付けるとDEBUGに変わる
 
-くらいが使いやすいか
+というような感じが使いやすいか
