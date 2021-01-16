@@ -57,13 +57,12 @@ asyncio.gather(a1, a2, a3)
 
 ## [Running in Threads](https://docs.python.org/3/library/asyncio-task.html#running-in-threads)
 
-普通の関数を、awaitするには、`asyncio.to_thread`に関数を渡す。
+普通の関数をawaitするには、`asyncio.to_thread`に関数を渡す。
 
 
 ## [Queues](https://docs.python.org/3/library/asyncio-queue.html)
 
 async/awaitと合わせて使うためのqueueが用意されている。
-クローリングをする時に
 
 例えば、
 
@@ -80,19 +79,19 @@ async def get_followers(x):
 
 async def get_favorites(y):
     response = await ... # get url of favorites for y
-    followers = parse_response(response)
-    return follwers
+    favorites = parse_response(response)
+    return favorites
 
 async def main(xs)
     yss = await asyncio.gather(*[
         get_followers(x) for x in xs
     ]) # (A)
     fss = await asyncio.gather(*[
-        get_favorites(y) for y in ys for ys in yss
+        get_favorites(y) for ys in yss for y in ys
     ])
 ```
 
-のように書くと、`(A)`の部分で、全ての`x`に対するリクエストが終わるまで処理がブロックされてしまう。
+のように書くと、全ての`x`に対するリクエストが終わるまで`(A)`の部分で処理がブロックされる。
 本当なら、1つの`x`に対するリクエストが終わる度に次のリクエストを投げたい。
 こういうときに、queueを上手く使うと思った処理が実現できる。
 ドキュメントの例を引用しておく。
@@ -152,4 +151,25 @@ async def main():
 
 
 asyncio.run(main())
+```
+
+上の`worker`では、`queue.get()`してから、`queue.task_done()`するまでの間に例外が起こると、queueの中身が減らないために`queue.join()`が永遠に解決されない。
+
+なので、次のようにした方が良い。
+
+```python
+async def worker(name, queue):
+    while True:
+        # Get a "work item" out of the queue.
+        try:
+            sleep_for = await queue.get()
+
+            # Sleep for the "sleep_for" seconds.
+            await asyncio.sleep(sleep_for)
+
+            print(f'{name} has slept for {sleep_for:.2f} seconds')
+        except Exception as e:
+            # 例外を処理する
+        finally:
+            queue.task_done()
 ```
