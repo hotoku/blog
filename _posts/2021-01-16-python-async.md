@@ -83,20 +83,22 @@ async def get_favorites(y):
     return favorites
 
 async def main(xs)
-    yss = await asyncio.gather(*[
+    yss = await asyncio.gather(*[ # ・・・ (A)
         get_followers(x) for x in xs
-    ]) # (A)
+    ])
     fss = await asyncio.gather(*[
         get_favorites(y) for ys in yss for y in ys
     ])
 ```
 
 のように書くと、全ての`x`に対するリクエストが終わるまで`(A)`の部分で処理がブロックされる。
-本当なら、1つの`x`に対するリクエストが終わる度に次のリクエストを投げたい。
-こういうときに、queueを上手く使うと思った処理が実現できる。
-ドキュメントの例を引用しておく。
+本当なら、1つの`x`に対するリクエストが終わったらすぐに、そいつのフォロワーを集めるリクエストを開始した方が効率が良い。
 
-以下の囲みは[ドキュメント](https://docs.python.org/3/library/asyncio-queue.html)からの引用
+
+こういうときに、queueを上手く使うと思った処理が実現できる。
+上の例とは別の人工的な処理だが、ドキュメントの例を見本として引用しておく。
+
+次の囲みは[ドキュメント](https://docs.python.org/3/library/asyncio-queue.html)からの引用
 ```python
 import asyncio
 import random
@@ -153,7 +155,7 @@ async def main():
 asyncio.run(main())
 ```
 
-上の`worker`では、`queue.get()`してから、`queue.task_done()`するまでの間に例外が起こると、queueの中身が減らないために`queue.join()`が永遠に解決されない。
+ところで、上の`worker`では、`queue.get()`してから、`queue.task_done()`するまでの間に例外が起こると、queueの中身が減らないために`queue.join()`が永遠に解決されない。
 
 なので、次のようにした方が良い。
 
