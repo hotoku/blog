@@ -36,8 +36,10 @@ keymapの中で、keymapが割り当てられている入力イベントをPrefi
 - `local keymap`: 通常、特定のメジャーモードに付属する
 - `minor mode keymap`: 現状のマイナーモードに付属するkeymap（マイナーモードにはkeymapがない場合もある）
 
-local keymapは、global mapを隠す。
-minor mode keymapは、global mapを隠す。
+local keymapは、global mapを隠す。minor mode keymapは、global mapを隠す。
+
+keymapは、他のkeymapから継承することができる。子のkeymapは親のkeymapの要素を変更したり追加したりできる。
+親のkeymapの値は、常に（dymanicに）子からも見える。
 
 
 
@@ -47,4 +49,14 @@ minor mode keymapは、global mapを隠す。
 
 
 ### Format of Keymaps
-keymapは、先頭が`keymap`というシンボルであるようなリスト。2つ目以降の要素は、いくつかの形が想定されている。
+pkeymapは、先頭が`keymap`というシンボルであるようなリスト。2つ目以降の要素は、いくつかの形が想定されている。
+
+また、function cellの値がkeymapであるようなシンボルも、keymapと見なされる。
+
+
+### Prefix Keys
+[このページ](https://www.gnu.org/software/emacs/manual/html_node/elisp/Prefix-Keys.html#Prefix-Keys)に、主要なglobal keymapが一覧されている。
+
+`mode-specific-map`という名前の（名前に反して）globalなkeymapがあり、これは`C-c`に割り当てられている。
+
+"prefix key"は、keymapでのbindingが、またkeymapであるようなinput event sequence。複数のprefix keyが、有効なkeymapの中にある場合、各マップの中が探される。
