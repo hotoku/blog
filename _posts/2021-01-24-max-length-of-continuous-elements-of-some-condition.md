@@ -9,7 +9,7 @@ tags: c++ atcoder
 下では、「値が`a`以上」という条件を満たす区間の最大の長さを計算している。
 `while`が入れ子になっているが、よく考えると実行時間はO(N)。
 
-```
+```cpp
 #include<iostream>
 #include<vector>
 #include<string>
