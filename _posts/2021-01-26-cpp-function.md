@@ -20,5 +20,7 @@ int main(){
   function<int(int, int)> f2;
   f2 = f;
   cout << f2(1, 2) << endl;
+  f2 = [](int a, int b){ return a * b; };
+  cout << f2(2, 3) << endl;
 }
 ```
