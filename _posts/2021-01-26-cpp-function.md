@@ -6,7 +6,7 @@ tags: c++
 ---
 
 
-```
+```cpp
 #include <functional>
 #include <iostream>
 
