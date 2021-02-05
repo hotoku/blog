@@ -2,7 +2,7 @@
 layout: post
 title: gcloud deployment manager
 date: 2021-02-04 16:13:37 +0900
-tags: gcloud
+tags: gcloud gcp
 ---
 
 GCPのdeployment managerを使ってみた（getting stated）のでメモ。
