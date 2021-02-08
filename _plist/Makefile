@@ -8,8 +8,9 @@ all: install
 	launchctl start $(label)
 
 
-install: $(label).plist stop a
+install: $(label).plist stop server
 	mkdir -p ~/Library/LaunchAgents
+	chmod 755 server
 	cp $< ~/Library/LaunchAgents
 	launchctl load ~/Library/LaunchAgents/$<
 
