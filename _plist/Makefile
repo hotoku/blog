@@ -8,7 +8,8 @@ all: install
 	launchctl start $(label)
 
 
-install: $(label).plist stop
+install: $(label).plist stop a
+	mkdir -p ~/Library/LaunchAgents
 	cp $< ~/Library/LaunchAgents
 	launchctl load ~/Library/LaunchAgents/$<
 
@@ -20,9 +21,9 @@ stop:
 
 
 clean: stop
-	rm ./$(label).plist
-	rm ~/Library/LaunchAgents/$(label).plist
+	rm -f ./$(label).plist ./server.sh
+	rm -f ~/Library/LaunchAgents/$(label).plist
 
 
-%: %.jinja
-	jinja2 -D pwd=$(shell pwd) -D label=$(label)  $< > $@
+%: %.jinja env
+	./render -D pwd=$(shell pwd) -D label=$(label) --env=./env $< > $@

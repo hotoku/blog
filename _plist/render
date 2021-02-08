@@ -1,0 +1,26 @@
+#!/usr/bin/env python3
+
+import click
+from jinja2 import Template, Environment, FileSystemLoader
+
+def read_env(ipath):
+    with open(ipath) as f:
+        lines = f.readlines()
+    return [l.strip().split("=") for l in lines]
+
+@click.command()
+@click.option("--data", "-D", multiple=True)
+@click.option("--env", required=True)
+@click.argument("template")
+def main(data, env, template):
+    data2 = [d.split("=") for d in data]
+    data3 = read_env(env)
+    data4 = dict(data2 + data3)
+    environment = Environment(loader=FileSystemLoader("."))
+    template2 = environment.get_template(template)
+    print(template2.render(data4))
+    
+
+    
+if __name__ == "__main__":
+    main()    
