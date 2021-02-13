@@ -34,3 +34,10 @@ span.k{
 span.kn{
     color: #0000ee;
 }
+
+/* header */
+.post-content h2 {
+    border-left: solid #3f82ec 5px;
+    padding: 7px 12px;
+    background: #eaeaea;
+}
