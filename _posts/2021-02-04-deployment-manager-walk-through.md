@@ -18,7 +18,7 @@ tags: gcp gcloud
 
 ## configファイルの基本的な構成
 
-```
+```yaml
 resources:
 - name: xxx
   type: xxx
@@ -43,7 +43,7 @@ GCEなら`compute.v1.instance`が入る。
 
 1つのdeploymentの中に複数のリソースが含まれており、その設定値が相互を参照するような場合、リファレンスを使う。
 
-```
+```yaml
 resources:
 - name: the-first-vm
   type: compute.v1.instance
@@ -120,7 +120,7 @@ def GenerateConfig(context):
 テンプレートのプロパティには、任意の値を入れられる。
 テンプレートからは、
 
-```
+```python
 context.properties["name"]
 ```
 
@@ -128,7 +128,7 @@ context.properties["name"]
 
 プロパティの他にデプロイメントに固有の情報が事前に設定されている環境変数にもアクセスできる。
 
-```
+```python
 context.env["name"]
 ```
 
@@ -142,7 +142,7 @@ context.env["name"]
 
 プロパティの設定は、テンプレートを呼び出す際に
 
-```
+```python
 def GenerateConfig(unused_context):
   resources = [{
       'name': 'the-first-vm',
@@ -163,13 +163,13 @@ def GenerateConfig(unused_context):
 pythonのテンプレートの中では、他のモジュールをimportすることができる。
 このとき、テンプレートの中で
 
-```
+```python
 import common
 ```
 
 をするのと同時に、yamlの中でも
 
-```
+```python
 imports:
 - path: common.py
 ```
