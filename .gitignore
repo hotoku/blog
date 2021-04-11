@@ -4,6 +4,6 @@ _site
 .jekyll-metadata
 vendor
 .DS_Store
-/_plist2/jekyll.err
-/_plist2/jekyll.log
-/_plist2/info.hotoku.blog2.plist
+/_plist/jekyll.err
+/_plist/jekyll.log
+/_plist/info.hotoku.blog2.plist
