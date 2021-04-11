@@ -1,6 +1,6 @@
 IMAGE := jekyll/jekyll:4
 DEST := ~/Library/LaunchAgents
-PLIST := info.hotoku.blog2.plist
+PLIST := info.hotoku.blog.plist
 CONTAINER := hotoku-blog
 PWD := $(shell pwd)
 DOCKER := $(shell which docker)
