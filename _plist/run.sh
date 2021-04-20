@@ -41,4 +41,4 @@ ${DOCKER} run \
        -p 4000:4000 \
        --name=${CONTAINER} \
        jekyll/jekyll:4 \
-       jekyll serve --drafts --incremental --livereload --force_polling --watch
+       jekyll serve --drafts --livereload --incremental
