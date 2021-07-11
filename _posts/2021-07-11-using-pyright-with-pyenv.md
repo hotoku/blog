@@ -6,7 +6,7 @@ tags: python emacs
 ---
 
 
-lsp-pyrgihtを使ってpyrgihtを起動している。このpyrightが、pyenv-virtualenvで分離された環境のライブラリを読めるようにしたい。
+lsp-pyrgihtを使ってpyrgihtを起動している。このpyrightが、poetryやpyenv-virtualenvで分離された環境のライブラリを読めるようにしたい。
 
 `lsp-pyright-venv-path`という変数があるので、これに、virtualenvへのpathを設定すれば良い。
 例えば`~/.pyenv/versions/myversion`など。この値は、
