@@ -86,7 +86,7 @@ el.play()
 （多分。こういう時、ちゃんと背景を理解するためにPEPとかを読んだ方が良いんだろうなぁ・・[PEP 3119](https://www.python.org/dev/peps/pep-3119/)で提案されたらしい）。
 
 
-```
+```python
 from abc import ABC, abstractmethod
 
 
