@@ -71,3 +71,9 @@ useEffect(() => {
 ```
 const val = useMemo(() => func(arg), [arg])
 ```
+
+
+## useContext
+
+
+特定の変数を、コンポーネント間で共有する。Providerコンポーネントの子孫のコンポーネント間で変数を共有できる。
