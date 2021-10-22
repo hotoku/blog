@@ -254,4 +254,8 @@
     @include relative-font-size(1.3);
     padding: 7px 12px;
   }
+
+  h5 {
+      font-weight: bold;
+  }
 }
