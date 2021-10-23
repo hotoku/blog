@@ -13,7 +13,7 @@ tags:  react
 
 - １つの変数の値を、残しておける
 
-```
+```typescript
 const [value, setValue] = useState(initialValue);
 ```
 
@@ -21,7 +21,7 @@ const [value, setValue] = useState(initialValue);
 
 - 副作用を起こす処理を記述する
 
-```
+```typescript
 useEffect(() => {
     doSomething();
     return () => clearSomething();
@@ -35,7 +35,7 @@ useEffect(() => {
 
 ことができる。
 
-```
+```typescript
 useEffect(() => {
     doSomething();
     return () => clearSomething();
@@ -52,7 +52,7 @@ useEffect(() => {
 
 メモ化する
 
-```
+```typescript
 const val = useMemo(() => {
     // 何かやる
 }, deps)
@@ -64,13 +64,13 @@ const val = useMemo(() => {
 
 関数定義をメモ化する
 
-```
+```typescript
 useCallback(fn, deps)
 ```
 
 は、
 
-```
+```typescript
 useMemo(() => fn, deps)
 ```
 
