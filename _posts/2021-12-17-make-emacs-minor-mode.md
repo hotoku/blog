@@ -61,3 +61,68 @@ https://qiita.com/tadsan/items/431899f76f3765892abd#4--autoloadsel
 > 関数定義や変数定義の上の行に;;;###autoloadと書いてやるだけで、パッケージ管理ツールが適切に自動生成してくれます
 
 らしい。
+
+#### [2021-12-17 12:09:56]
+
+とりあえず、こんな感じのサンプルコードをでっち上げる。
+
+```lisp
+;;; zetasql-formatter-mode.el ---  -*- lexical-binding: t -*-
+
+;; Copyright (C) 2021 Yasunori Horikoshi
+
+;; Author: Yasunori Horikoshi <horikoshi.et.al@gmail.com>
+;; Keywords: lisp
+;; Version: 0.0.1
+
+;;; Commentary:
+
+;;; Code:
+
+(define-minor-mode zetasql-formatter-mode
+  "Format query by zetasql-formatter before saving the buffer.")
+
+;;;###autoload
+(defun zsfm-format ()
+  "Format sql in the buffer."
+  (message "hoge"))
+
+;;;###autoload
+(add-hook 'sql-mode-hook
+          '(lambda ()
+             (add-hook 'before-save-hook 'zsfm-format nil t)))
+
+(provide 'zetasql-formatter-mode)
+;;; zetasql-formatter-mode.el ends here
+```
+
+`~/projects/zetasql-formatter-mode/zetasql-formatter-mode.el`として保存。
+
+#### [2021-12-17 12:06:52]
+
+パッケージ管理ツールに適切に自動生成してもらうには・・`M-x package-install-file`で、上のファイルを指定してみる。
+すると・・
+
+1. `~/.emacs.d/elpa/zetasql-formatter-mode-0.0.1`というディレクトリができる
+2. 中を見てみると・・`zetasql-formatter-mode{.el,.elc,-pkg.el,-autloads.el}`ができてる
+
+`zetasql-formatter-mode-autoloads.el`の中を見てみると・・
+
+```lisp
+(autoload 'zsfm-format "zetasql-formatter-mode" "\
+Format sql in the buffer." nil nil)
+
+(add-hook 'sql-mode-hook '(lambda nil (add-hook 'before-save-hook 'zsfm-format nil t)))
+```
+
+こんなコードが書いてある。ふむふむ
+
+1. `zsfm-format`が`auto-load`に渡されている
+2. `add-hook`の内容は、そのまま書いてある
+
+起動時には、このautoloadsファイルが読まれる。するとどうなるかというと、
+
+2. `zsfm-format`が初めて呼ばれたときに、`zetasql-format-mode.elc`が読まれるように登録される
+3. `add-hook`は、そのまま書いてあるので、`*.sql`を開いたときに、`before-save-hook`に`zsfm-format`が登録される
+
+つまり、初めて`*.sql`ファイルを開いて、保存したときに、`zetasql-format-mode.elc`が読まれるようになるんじゃね
