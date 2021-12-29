@@ -53,3 +53,5 @@ helloWorldModule();
 ## その他
 
 [この記事](https://qiita.com/kzee/items/dacbdd552bf8fe49f423)も分かりやすい
+
+結局、[公式](https://typescriptbook.jp/reference/import-export-require)を読むのが一番安心感がある気もする
