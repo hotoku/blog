@@ -288,3 +288,30 @@ ITEM_PIPELINES = {
     'search.pipelines.SaveToSqlitePipeline': 300,
 }
 ```
+
+この状態で、`scrapy crawl entry -a query=hoge`を実行すると`db.sqlite`ができる。
+以下のようなコードで`db.sqlite`の中身を確認すると、
+
+``` python
+from .pipelines import Key
+from sqlitedict import SqliteDict
+
+with SqliteDict("db.sqlite") as dic:
+    for k, v in dic.items():
+        key = Key.parse(k)
+        print(key, ":", v)
+```
+
+次のような出力が得られる。
+
+``` python
+Key(keyword='hoge', rank=7) : [Value(title='A page of HOGE', url='http://kmaebashi.com/programmer/hoge.html', timestamp=datetime.datetime(2022, 1, 28, 7, 37, 34))]
+Key(keyword='hoge', rank=5) : [Value(title='hogeとは (ホゲとは) [単語記事] - ニコニコ大百科', url='https://dic.nicovideo.jp/a/hoge', timestamp=datetime.datetime(2022, 1, 28, 7, 37, 34))]
+Key(keyword='hoge', rank=6) : [Value(title=None, url='https://e-words.jp/w/%E3%83%A1%E3%82%BF%E6%A7%8B%E6%96%87%E5%A4%89%E6%95%B0.html', timestamp=datetime.datetime(2022, 1, 28, 7, 37, 34))]
+Key(keyword='hoge', rank=9) : [Value(title='hogeの意味・使い方・読み方 | Weblio英和辞書', url='https://ejje.weblio.jp/content/hoge', timestamp=datetime.datetime(2022, 1, 28, 7, 37, 34))]
+Key(keyword='hoge', rank=1) : [Value(title='悲報：プログラムサンプルの「hoge」が通じない時代が来た - ねとらぼ', url='https://nlab.itmedia.co.jp/nl/articles/1506/19/news043.html', timestamp=datetime.datetime(2022, 1, 28, 7, 37, 34))]
+Key(keyword='hoge', rank=3) : [Value(title='hoge とは何か - Qiita', url='https://qiita.com/hanlio/items/0505c266c114127c6457', timestamp=datetime.datetime(2022, 1, 28, 7, 37, 34))]
+Key(keyword='hoge', rank=4) : [Value(title='メタ構文変数 - Wikipedia', url='https://ja.wikipedia.org/wiki/%E3%83%A1%E3%82%BF%E6%A7%8B%E6%96%87%E5%A4%89%E6%95%B0', timestamp=datetime.datetime(2022, 1, 28, 7, 37, 34))]
+Key(keyword='hoge', rank=10) : [Value(title='hogeとは コンピュータの人気・最新記事を集めました - はてな', url='https://d.hatena.ne.jp/keyword/hoge', timestamp=datetime.datetime(2022, 1, 28, 7, 37, 34))]
+Key(keyword='hoge', rank=8) : [Value(title='【Q＆A】解説記事に出てくる「hoge」とか「fuga」ってなに？ | CodeShip blog', url='https://code-ship-blog.wemotion.co.jp/class-diary/%E3%80%90q%EF%BC%86a%E3%80%91%E8%A7%A3%E8%AA%AC%E8%A8%98%E4%BA%8B%E3%81%AB%E5%87%BA%E3%81%A6%E3%81%8F%E3%82%8B%E3%80%8Choge%E3%80%8D%E3%81%A8%E3%81%8B%E3%80%8Cfuga%E3%80%8D%E3%81%A3%E3%81%A6%E3%81%AA/', timestamp=datetime.datetime(2022, 1, 28, 7, 37, 34))]
+```
