@@ -12,27 +12,29 @@ load: $(PLIST) image unload
 	cp $< $(DEST)
 	launchctl load $(DEST)/$<
 
+
 .PHONY: unload
 unload: stop
 	launchctl unload $(DEST)/$(PLIST)
 	rm -f $(DEST)/$(PLIST)
 
+
 .PHONY: stop
 stop:
 	docker stop $(CONTAINER) || true
 
+
 .PHONY: image
 image:
 	docker pull $(IMAGE)
+
 
 .PHONY: clean
 clean: unload
 	rm -f $(PLIST)
 
 
-%: %.jinja	
+%: %.jinja
 	jinja2 -D pwd=$(PWD) \
-		-D container=$(CONTAINER) \
 		-D label=$(subst .plist,,$(PLIST)) \
-		-D docker=$(DOCKER) \
 		$< > $@
