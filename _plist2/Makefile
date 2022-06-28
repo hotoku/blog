@@ -1,32 +1,18 @@
-IMAGE := jekyll/jekyll:4
 DEST := ~/Library/LaunchAgents
 PLIST := info.hotoku.blog.plist
-CONTAINER := hotoku-blog
 PWD := $(shell pwd)
-DOCKER := $(shell which docker)
 
 
 .PHONY: load
-load: $(PLIST) image unload
-	echo docker=$(DOCKER)
+load: $(PLIST) unload
 	cp $< $(DEST)
 	launchctl load $(DEST)/$<
 
 
 .PHONY: unload
-unload: stop
+unload:
 	launchctl unload $(DEST)/$(PLIST)
 	rm -f $(DEST)/$(PLIST)
-
-
-.PHONY: stop
-stop:
-	docker stop $(CONTAINER) || true
-
-
-.PHONY: image
-image:
-	docker pull $(IMAGE)
 
 
 .PHONY: clean
