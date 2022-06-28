@@ -1,0 +1,1 @@
+jekyllをDockerで動かす場合のplist
