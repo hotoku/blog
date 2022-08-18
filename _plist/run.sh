@@ -7,6 +7,7 @@ echo $(date) $*
 CONTAINER=""
 WORKDIR=""
 DOCKER=""
+IMAGE_ID="aecf9b34cb20"
 
 
 while getopts c:d:e: OPT; do
@@ -48,5 +49,5 @@ ${DOCKER} run \
           --volume=$(pwd):/srv/jekyll \
           -p 4000:4000 \
           --name=${CONTAINER} \
-          jekyll/jekyll:4 \
+          ${IMAGE_ID} \
           jekyll serve --drafts --livereload
