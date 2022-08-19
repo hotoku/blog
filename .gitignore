@@ -8,3 +8,4 @@ vendor
 /_plist*/jekyll.log
 /_plist*/info.hotoku.blog.plist
 .ruby-version
+.envrc
