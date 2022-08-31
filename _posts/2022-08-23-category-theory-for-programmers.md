@@ -2,7 +2,7 @@
 layout: post
 title: category theory for programmers
 date: 2022-08-23 08:56:09 +0900
-tags: category
+tags: category_theory
 ---
 
 Zennで[プログラマのための圏論](https://zenn.dev/taketo1024/books/850b20937af93b)という翻訳プロジェクトを見つけた。
