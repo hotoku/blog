@@ -47,13 +47,16 @@ tags: life
 平衡状態の温度は
 
 $$
+t &=& \frac{t_e V_e + t_l V_l + t_h V_h}{V_t} \\
+  &=& \frac{t_e V_e + t_l V_l + t_h (V_t - V_e - V_l)}{V_t} \\
+  &=& \frac{(t_e - t_h) V_e + (t_l - t_h) V_l + t_h (V_t - V_e - V_l)}{V_t} \\
+$$
+
+
+これを目標温度$t_g$とするためには
+
+$$
 t = \frac{t_e V_e + t_l V_l + t_h V_h}{V_t}
-$$
-
-これを目標温度$t_g$とするための水の体積は
-
-$$
-V_l = \frac{t_g V_g - t_e V_e - t_h V_h }{t_l}
 $$
 
 であれば良さそう。
