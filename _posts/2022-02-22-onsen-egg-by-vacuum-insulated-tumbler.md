@@ -59,7 +59,9 @@ $$
 上式を $V_l$ について解くと
 
 $$
-V_l = \frac{t_g V_t + (t_h - t_e) V_e + t_h V_t}{t_h - t_l}
+V_l = \frac{t_g V_t - (t_e - t_h) V_e - t_h V_t}{t_l - t_h}
+= \frac{- t_g V_t + (t_e - t_h) V_e + t_h V_t}{t_h - t_l}
+= \frac{t_h V_h - t_g V_t - (t_h - t_e) Ve}{t_h - t_l}
 $$
 
 となる。
