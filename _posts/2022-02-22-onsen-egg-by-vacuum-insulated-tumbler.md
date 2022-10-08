@@ -36,6 +36,8 @@ tags: life
 
 ## どれくらいの水で補正すればよいのか
 
+適切な料のお水を入れて目標温度の状態を作り、断熱タンブラーでそれを長時間保つというのが正しい方針であろう。
+
 - タンブラーの容積 $V_t$ [ml]
 - 卵の温度 $t_e$ [℃]
 - 卵の容積 $V_e$ [ml]
@@ -44,19 +46,20 @@ tags: life
 - お湯の温度 $t_h=100$ [℃]
 - お湯の体積 $V_h = V_t - V_e - V_l$ [ml]
 
-平衡状態の温度は
+とすると、平衡状態の温度$t_g$は
 
 $$
-t &=& \frac{t_e V_e + t_l V_l + t_h V_h}{V_t} \\
-  &=& \frac{t_e V_e + t_l V_l + t_h (V_t - V_e - V_l)}{V_t} \\
-  &=& \frac{(t_e - t_h) V_e + (t_l - t_h) V_l + t_h (V_t - V_e - V_l)}{V_t} \\
+t_g &=& \frac{t_e V_e + t_l V_l + t_h V_h}{V_t} \\
+    &=& \frac{t_e V_e + t_l V_l + t_h (V_t - V_e - V_l)}{V_t} \\
+    &=& \frac{(t_e - t_h) V_e + (t_l - t_h) V_l + t_h V_t}{V_t}
 $$
 
+となる。$V_l$を適切に設定することで、これを70℃弱にしたい。
 
-これを目標温度$t_g$とするためには
+上式を$V_l$について解くと
 
 $$
-t = \frac{t_e V_e + t_l V_l + t_h V_h}{V_t}
+V_l = \frac{t_g V_t + (t_h - t_e) V_e + t_h V_t}{t_h - t_l}
 $$
 
-であれば良さそう。
+となる。
