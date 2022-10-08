@@ -49,9 +49,9 @@ tags: life
 とすると、平衡状態の温度$t_g$は
 
 $$
-t_g &=& \frac{t_e V_e + t_l V_l + t_h V_h}{V_t} \\
-    &=& \frac{t_e V_e + t_l V_l + t_h (V_t - V_e - V_l)}{V_t} \\
-    &=& \frac{(t_e - t_h) V_e + (t_l - t_h) V_l + t_h V_t}{V_t}
+t_g = \frac{t_e V_e + t_l V_l + t_h V_h}{V_t} \\
+    = \frac{t_e V_e + t_l V_l + t_h (V_t - V_e - V_l)}{V_t} \\
+    = \frac{(t_e - t_h) V_e + (t_l - t_h) V_l + t_h V_t}{V_t}
 $$
 
 となる。$V_l$を適切に設定することで、これを70℃弱にしたい。
