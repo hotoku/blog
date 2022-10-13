@@ -1,7 +1,9 @@
 #!/bin/bash
 
 
-echo $(date) $*
+echo args=$*
+echo $(pwd)
+echo $(date)
 echo ${PATH}
 
 
@@ -11,8 +13,7 @@ print_usage(){
 
 
 export PATH=/usr/local/bin:${PATH}
-source $(brew --prefix)/opt/chruby/share/chruby/chruby.sh
-source $(brew --prefix)/opt/chruby/share/chruby/auto.sh
+eval "$(anyenv init -)"
 
 
-jekyll serve --drafts --livereload
+bundle exec jekyll serve --drafts --livereload
