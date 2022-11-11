@@ -13,7 +13,6 @@ permalink: /tags/
 {% if vids != empty %}
 
 {% assign tagid = tag[0] | url_escape | downcase %}
-
 <input id="tags-check-{{tagid}}" class="tags-check" type="checkbox">
 <label class="tags-label" for="tags-check-{{tagid}}" id="tags-{{tagid}}">{{tag[0]}}</label>
 <div class="tags-content">
@@ -23,7 +22,7 @@ permalink: /tags/
             <span class="entry-date">
                 <time style="width: 6em; display: inline-block" datetime="{{ p.date | date_to_xmlschema }}" itemprop="datePublished">{{ p.date | date: "%Y-%m-%d" }}</time>
             </span>
-            <a href="{{ p.url }}">{{ p.title }}</a>
+            <a href="{{ site.baseurl }}/{{ p.url }}">{{ p.title }}</a>
         </li>
         {% endfor %}
     </ul>
