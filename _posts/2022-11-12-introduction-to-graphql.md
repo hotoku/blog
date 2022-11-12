@@ -131,8 +131,19 @@ const root = {
   );
   app.listen(port);
 })();
-
 ```
+
+**ポイント**
+
+1. expressのハンドラとして`graphqlHTTP`を登録
+  1. `rootValue`として`root`オブジェクトを渡す
+  1. `root`の中に、クエリに対応した関数`getDie`を定義
+
+基本、サーバー側が実装するのはこれだけ。
+GraphQLの実装ライブラリが、先ほどの例のような、どのプロパティ/メソッドがどれだけ必要かってところは面倒を見てくれる。
+便利だ。よくできてる。
+
+また、`graphiql: true`をしておくと、デバグ用のUIが使えるようになる
 
 <!-- link -->
 [公式]: https://graphql.org/learn/queries/
