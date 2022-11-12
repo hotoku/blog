@@ -12,7 +12,11 @@ print_usage(){
 }
 
 
-export PATH=/usr/local/bin:${PATH}
+if [[ $(hostname) = "hotoku-macmini-2020.local" ]]; then
+    export PATH=/opt/homebrew/bin:${PATH}
+else
+    export PATH=/usr/local/bin:${PATH}
+fi
 eval "$(anyenv init -)"
 
 
