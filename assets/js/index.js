@@ -1,7 +1,5 @@
 import { greet } from "./greet";
-
 function main() {
-  greet("world");
+    greet("world");
 }
-
 export default main;
