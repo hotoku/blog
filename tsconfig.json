@@ -6,10 +6,10 @@
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "skipLibCheck": true,
-    "outDir": "./dist",
+    "outDir": "./assets/js",
     "rootDir": "./src",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true
   },
-  "exclude": ["./tests/", "./node_modules/", "./dist/"]
+  "exclude": ["./tests/", "./node_modules/", "./_site/", "./assets/"]
 }
