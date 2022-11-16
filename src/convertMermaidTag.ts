@@ -7,7 +7,7 @@ function convertMermaidTag() {
   const codeNodes = document.querySelectorAll<HTMLElement>(
     "code.language-mermaid"
   );
-  codeNodes.forEach(async (codeNode, index) => {
+  codeNodes.forEach((codeNode, index) => {
     const pre = codeNode.parentNode; // これがreplaceされるやつ
     const parent = pre.parentNode;
 

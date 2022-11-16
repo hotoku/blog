@@ -3,9 +3,6 @@ async function main() {
   const convertMermaidTag = (await import("./convertMermaidTag")).default;
   console.log("imported");
   convertMermaidTag();
-  // window.addEventListener("load", () => {
-  //   convertMermaidTag();
-  // });
 }
 
 main();
