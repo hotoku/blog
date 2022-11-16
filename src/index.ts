@@ -3,19 +3,17 @@ export const convertMermaidTag = () => {
   nodes.forEach((node) => {
     const pre = node.parentNode as ParentNode;
     const parent = pre.parentNode as ParentNode;
-    parent.replaceChild(
-      document.createElement(
-        "div",
-        {}
-        // `<div class="mermaid">${node.textContent}</div>`
-      ),
-      pre
-    );
+    const child = document.createElement("div");
+    child.className = "language-mermaid";
+    child.textContent = node.textContent;
+    parent.replaceChild(child, pre);
   });
 };
 
 function main() {
-  convertMermaidTag();
+  window.addEventListener("load", () => {
+    convertMermaidTag();
+  });
 }
 
 main();
