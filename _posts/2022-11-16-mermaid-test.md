@@ -1,15 +1,18 @@
 ---
 layout: post
-title: mermaid test
+title: mermaidのテスト
 date: 2022-11-16 08:20:39 +0900
-tags: javascript mermaid
+tags: mermaid
 ---
 
-ここに↓mermaid
+マーメイドが描画されるようにした。
+
+## フローチャート
 
 ``` mermaid
 flowchart TD
-  A
+  A[あ]
+  B[い]
+  A --> B
+  C --> D
 ```
-
-上に↑mermaid
