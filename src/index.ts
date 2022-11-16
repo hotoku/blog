@@ -1,3 +1,5 @@
+import mermaid from "mermaid";
+
 export const convertMermaidTag = () => {
   const nodes = document.querySelectorAll<HTMLElement>("code.language-mermaid");
   nodes.forEach((node) => {
