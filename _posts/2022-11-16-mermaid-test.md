@@ -15,7 +15,7 @@ jekyllのビルドプロセスの中で変換して、静的に配信する方�
 
 ## フローチャート
 
-`G {{G. hexagon}}`がちゃんと表示されないな🤔markdownの制約か？
+`G {{G. hexagon}}`がちゃんと表示されないな🤔..liquidのテンプレート文字列だと思われて変換されちゃってる気がする
 
 ``` mermaid
 flowchart LR
