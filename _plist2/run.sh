@@ -1,7 +1,9 @@
 #!/bin/bash
 
 
-echo $(date) $*
+echo args=$*
+echo $(pwd)
+echo $(date)
 echo ${PATH}
 
 
@@ -10,9 +12,12 @@ print_usage(){
 }
 
 
-export PATH=/usr/local/bin:${PATH}
-source $(brew --prefix)/opt/chruby/share/chruby/chruby.sh
-source $(brew --prefix)/opt/chruby/share/chruby/auto.sh
+if [[ $(hostname) = "hotoku-macmini-2020.local" ]]; then
+    export PATH=/opt/homebrew/bin:${PATH}
+else
+    export PATH=/usr/local/bin:${PATH}
+fi
+eval "$(anyenv init -)"
 
 
-jekyll serve --drafts --livereload
+bundle exec jekyll serve --drafts --livereload

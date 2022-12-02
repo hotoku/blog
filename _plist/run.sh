@@ -48,5 +48,5 @@ ${DOCKER} run \
           --volume=$(pwd):/srv/jekyll \
           -p 4000:4000 \
           --name=${CONTAINER} \
-          jekyll/jekyll:4 \
+          ${IMAGE} \
           jekyll serve --drafts --livereload

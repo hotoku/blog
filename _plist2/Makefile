@@ -18,6 +18,7 @@ unload:
 .PHONY: clean
 clean: unload
 	rm -f $(PLIST)
+	rm -f jekyll.log jekyll.err
 
 
 %: %.jinja
