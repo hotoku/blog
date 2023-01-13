@@ -1,36 +1,36 @@
 a.tagname-home {
-    margin-left: 0.5em;
+  margin-left: 0.5em;
 }
 
 /* /tags */
-.tags-check{
-    display: none;
+.tags-check {
+  display: none;
 }
-.tags-label{
-    display: block;
-    margin-bottom: 1px;
+.tags-label {
+  display: block;
+  margin-bottom: 1px;
 }
-.tags-content{
-    height: 0;
-    opacity: 0;
-    visibility: hidden;
-    transition: .05s;
+.tags-content {
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.05s;
 }
-.tags-check:checked + .tags-label + .tags-content{
-    background: #f0f0f0;
-    height: auto;
-    opacity: 1;
-    padding: 10px;
-    visibility: visible;
+.tags-check:checked + .tags-label + .tags-content {
+  background: #f0f0f0;
+  height: auto;
+  opacity: 1;
+  padding: 10px;
+  visibility: visible;
 }
-.tags-content-list{
-    margin-bottom: 0px;
+.tags-content-list {
+  margin-bottom: 0px;
 }
 
 /* source code highlight */
-span.k{
-    color: #0000ee;
+span.k {
+  color: #0000ee;
 }
-span.kn{
-    color: #0000ee;
+span.kn {
+  color: #0000ee;
 }
