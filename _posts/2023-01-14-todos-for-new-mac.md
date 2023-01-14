@@ -22,3 +22,6 @@ tags: life
   - better snap tool:
 - ssh鍵の登録
 - mypsの鍵ファイルをコピー
+- データをrsync: `rsync -e ssh hotoku@ホスト フォルダ/ フォルダ` こんな感じ
+  - firefoxのprofile: ~/Library/Application Support/Firefox 辺りにあった
+  - ~/projects
