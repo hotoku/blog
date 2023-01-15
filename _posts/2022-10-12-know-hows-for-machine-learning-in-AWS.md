@@ -120,6 +120,7 @@ chsh -s /bin/bssh
 ```
 
 あと、sshdの設定を変更して、パスワードでのログインは禁じるようにしたほうがセキュア。コマンドは忘れた
+
 <!-- link -->
 [linux-user-add]: https://eng-entrance.com/linux-user-add
 [ssh-add]: https://qiita.com/tattn/items/a03cbf7c185d7efa6769
