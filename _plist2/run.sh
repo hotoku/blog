@@ -12,7 +12,7 @@ print_usage(){
 }
 
 
-if [[ $(hostname) = "hotoku-macmini-2020.local" ]]; then
+if [[ -d /opt/homebre ]]; then
     export PATH=/opt/homebrew/bin:${PATH}
 else
     export PATH=/usr/local/bin:${PATH}
