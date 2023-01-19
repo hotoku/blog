@@ -8,8 +8,9 @@ tags: linux
 
 参考
 
-- https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-22-04#step-5-%E2%80%93-setting-up-server-blocks-(recommended)
-- https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-22-04
+- [nginxのインストール](https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-22-04)
+- [証明書のインストール](https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-22-04)
+- [basic認証](https://docs.nginx.com/nginx/admin-guide/security-controls/configuring-http-basic-authentication/)
 
 ## nginxのインストール
 
@@ -43,3 +44,20 @@ sudo ufw status # 対象のエントリが活きていることを確認
 - 設定ファイルを作成 `/etc/nginx/sites-available/inctore`ファイルを作り、`server`ディレクティブを書く
 - 設定ファイルをリンク `/etc/nginx/sites-enabled/inctore`に、上のファイルのシンボリックリンクを置く
 - `/etc/nginx/nginx.conf` の`server_names_hash_bucket_size 64;`を有効にする
+- `nginx -t`で設定ファイルの文法チェック
+- `systemctl restart nginx` でnginx再起動
+
+ここまでで、httpでアクセスできるはず
+
+## 証明書のインストール
+
+- snapでcertbotをインストールする
+  - `sudo snap install core; sudo snap refresh core`
+  - `sudo apt remove certbot`
+  - `sudo snap install --classic certbot`
+  - `sudo ln -s /snap/bin/certbot /usr/bin/certbot`
+- ファイアウォールの調整
+  - `sudo ufw delete allow 'Nginx HTTP'`
+  - `sudo ufw allow 'Nginx Full'`
+- certbotで証明書をインストール
+  - `sudo certbot --nginx -d viewer.inctore.com`
