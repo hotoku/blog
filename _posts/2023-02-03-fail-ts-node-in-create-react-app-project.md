@@ -17,3 +17,7 @@ tags: react
 ```shell
 npx ts-node -O '{"isolatedModules: false"}'
 ```
+
+追記
+
+↑これで起動するかと思ったら、結局エラーが出てダメだったよ。
