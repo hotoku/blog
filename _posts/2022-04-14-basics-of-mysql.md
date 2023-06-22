@@ -11,6 +11,10 @@ tags: mysql
 $ mysql_secure_installation
 ```
 
+https://mariadb.com/kb/en/mysql_secure_installation/
+
+パスワードの設定とかもできるらしい
+
 ### パスワードを使ってログイン
 
 ```shell
