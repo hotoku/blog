@@ -12,7 +12,7 @@ print_usage(){
 }
 
 
-if [[ -d /opt/homebre ]]; then
+if [[ -d /opt/homebrew ]]; then
     export PATH=/opt/homebrew/bin:${PATH}
 else
     export PATH=/usr/local/bin:${PATH}
