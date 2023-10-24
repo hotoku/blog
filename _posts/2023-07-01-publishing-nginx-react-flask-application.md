@@ -27,7 +27,7 @@ tags: react nginx flask
 - [x] nginx再起動 sudo systemctl restart nginx.service
 - [x] ブラウザで、http://kintai.hotoku.info にアクセス → アプリの空の画面が見える
 - [x] certbotインストール sudo apt install python3-certbot-nginx
-- [x] SSL証明書をインストール: certbotにお任せ sudo certbot --nginx -d example.hotoku.info
+- [x] SSL証明書をインストール: certbotにお任せ `sudo certbot --nginx -d example.hotoku.info`
 - [x] ブラウザで、https://kintai.hotoku.info にアクセス → アプリの空の画面が見える
 - [x] basic認証を入れる
   - sudo apt-get install apache2-utils # pluginを入れる
