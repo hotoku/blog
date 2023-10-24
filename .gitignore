@@ -9,3 +9,5 @@ vendor
 /_plist*/info.hotoku.blog.plist
 .envrc
 node_modules/
+# fosi
+index.html
