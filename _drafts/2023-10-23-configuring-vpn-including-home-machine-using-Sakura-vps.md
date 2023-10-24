@@ -35,25 +35,70 @@ tags: unix
 
 ここまでで、一般の話はできた。
 
-以下は、
+以下、wireguardの設定を行う。[参考link](https://serversideup.net/how-to-set-up-wireguard-vpn-server-on-ubuntu-20-04/)
 
-- https://zenn.dev/kumanorihjkl/articles/451194636eb0eb#wireguard%E8%A8%AD%E5%AE%9A
-- https://qiita.com/kniwase/items/52d45d618edccbb914ca#%E8%A8%AD%E5%AE%9A%E3%81%AE%E7%94%9F%E6%88%90
+## サーバー側の設定をする
 
-を参考に進める。
+※ 以下、適宜、rootになるかsudoする。
 
-[2023-10-23 18:27:28]
+- インストール
+  - apt update, apt upgrade
+  - cat /var/run/reboot-required → 必要ならreboot
+  - apt install wireguard
+- 鍵生成
+  - mkdir -p /etc/wireguard/keys; wg genkey | tee /etc/wireguard/keys/server.key | wg pubkey | tee /etc/wireguard/keys/server.key.pub
+  - /etc/wireguard/keys/server.key が秘密鍵
+  - /etc/wireguard/keys/server.key.pub が公開鍵
+- デフォルトのネットワークインターフェースを探す
+  - ip -o -4 route show to default | awk '{print $5}': ここで出てきた名前を、後で使う
+- 設定ファイルの構成
+  - nano /etc/wireguard/wg0.conf
 
-サーバー側の設定を生成して、サーバー側でデーモンが起動するところまでは確認済み。
+```
+[Interface]
+Address = 10.0.0.1/24
+ListenPort = 51820
+PrivateKey = YOUR_SERVER_PRIVATE_KEY
+PostUp = iptables -A FORWARD -i %i -j ACCEPT; iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+PostDown = iptables -D FORWARD -i %i -j ACCEPT; iptables -t nat -D POSTROUTING -o eth0 -j MASQUERADE
+SaveConfig = true
+```
 
-クライアント側の設定が訳分からんちなりそうなので、サーバーを落として、OSクリーンインストールするところから再実行しても良さげ。17:13頃に作業始めたので、ここまで、1時間強。
+- PrivateKeyは、さっき生成した秘密鍵を指定する
+- PostUp, PostDownのインターフェース名(eth0)を、さっき調べたインターフェース名に置換
+- パーミッションを設定
+  - chmod 600 /etc/wireguard/wg0.conf /etc/wireguard/keys/server.key
+- wg-quick up wg0: これで、wg0が有効化する
+- systemctl enable wg-quick@wg0: リブート時に、自動でVPNサーバーが起動する
+- フォワーディングを有効化する
+  - /etc/sysctl.confファイルで、net.ipv4.ip_forward=1となっている行のコメントを外す
+- sysctl -p: 上の編集を有効にする
+- wireguard向けの通信を許可する: ufw allow 51820/udp
+- 一応、FWを停止→起動: ufw disable → ufw enable
 
-## mac appについて [2023-10-23] 現在
+## クライアント側の設定をする
 
-- 公式の案内は、app storeから
-  - `it is currently undergoing rapid development`らしい
-- Homebrew
-  - `wireguard-go`
-  - `wireguard-tools`というformulaeがある↑のcaskはない
+- AppStoreからwire guardのアプリをインストール
+- 「空のトンネル」を作成
+  - 鍵ペアが自動で作られる
+  - 以下のような設定を記入して保存する
 
-👉 AppStoreから手でインストールするのが良さす
+```
+[Interface]
+PrivateKey = abcdefghijklmnopqrstuvwxyz1234567890=+
+Address = 10.0.0.3/24
+DNS = 1.1.1.1, 1.0.0.1
+
+[Peer]
+PublicKey = YOUR_SERVER_PUBLIC_KEY
+AllowedIPs = 0.0.0.0/0
+Endpoint = YOUR_SERVER_WAN_IP:51820
+```
+
+- Interface.Addressには、任意のアドレスを入れる。VPN内で一意になるように管理する
+- Peer.PublicKeyには、サーバーの公開鍵を入れる
+- Peer.Endpointにはには、サーバーのWAN側のIPアドレスを入れる
+- サーバーにログインして、クライアントを登録する
+  - wg set wg0 peer クライアントの公開鍵 allowed-ips 上の設定に書いたクライアントのIPアドレス
+
+これで、VPN経由でインターネットにアクセスできるはず
