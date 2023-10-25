@@ -42,17 +42,17 @@ tags: unix
 ※ 以下、適宜、rootになるかsudoする。
 
 - インストール
-  - apt update, apt upgrade
-  - cat /var/run/reboot-required → 必要ならreboot
-  - apt install wireguard
+  - `apt update, apt upgrade`
+  - `cat /var/run/reboot-required` → 必要ならreboot
+  - `apt install wireguard`
 - 鍵生成
-  - mkdir -p /etc/wireguard/keys; wg genkey | tee /etc/wireguard/keys/server.key | wg pubkey | tee /etc/wireguard/keys/server.key.pub
-  - /etc/wireguard/keys/server.key が秘密鍵
-  - /etc/wireguard/keys/server.key.pub が公開鍵
+  - `mkdir -p /etc/wireguard/keys; wg genkey | tee /etc/wireguard/keys/server.key | wg pubkey | tee /etc/wireguard/keys/server.key.pub`
+  - `/etc/wireguard/keys/server.key` が秘密鍵
+  - `/etc/wireguard/keys/server.key.pub` が公開鍵
 - デフォルトのネットワークインターフェースを探す
-  - ip -o -4 route show to default | awk '{print $5}': ここで出てきた名前を、後で使う
+  - `ip -o -4 route show to default | awk '{print $5}'`: ここで出てきた名前を、後で使う
 - 設定ファイルの構成
-  - nano /etc/wireguard/wg0.conf
+  - `/etc/wireguard/wg0.conf`に、以下の内容を書く
 
 ```
 [Interface]
@@ -64,17 +64,17 @@ PostDown = iptables -D FORWARD -i %i -j ACCEPT; iptables -t nat -D POSTROUTING -
 SaveConfig = true
 ```
 
-- PrivateKeyは、さっき生成した秘密鍵を指定する
-- PostUp, PostDownのインターフェース名(eth0)を、さっき調べたインターフェース名に置換
+- `PrivateKey`は、さっき生成した秘密鍵を指定する
+- `PostUp`, `PostDown`のインターフェース名(eth0)を、さっき調べたインターフェース名に置換
 - パーミッションを設定
-  - chmod 600 /etc/wireguard/wg0.conf /etc/wireguard/keys/server.key
-- wg-quick up wg0: これで、wg0が有効化する
-- systemctl enable wg-quick@wg0: リブート時に、自動でVPNサーバーが起動する
+  - `chmod 600 /etc/wireguard/wg0.conf /etc/wireguard/keys/server.key`
+- `wg-quick up wg0`: これで、wg0が有効化する
+- `systemctl enable wg-quick@wg0`: リブート時に、自動でVPNサーバーが起動する
 - フォワーディングを有効化する
-  - /etc/sysctl.confファイルで、net.ipv4.ip_forward=1となっている行のコメントを外す
-- sysctl -p: 上の編集を有効にする
-- wireguard向けの通信を許可する: ufw allow 51820/udp
-- 一応、FWを停止→起動: ufw disable → ufw enable
+  - `/etc/sysctl.conf`ファイルで、`net.ipv4.ip_forward=1`となっている行のコメントを外す
+- `sysctl -p`: 上の編集を有効にする
+- wireguard向けの通信を許可する: `ufw allow 51820/udp`
+- 一応、FWを停止→起動: `ufw disable` → `ufw enable`
 
 ## クライアント側の設定をする
 
@@ -95,10 +95,10 @@ AllowedIPs = 0.0.0.0/0
 Endpoint = YOUR_SERVER_WAN_IP:51820
 ```
 
-- Interface.Addressには、任意のアドレスを入れる。VPN内で一意になるように管理する
-- Peer.PublicKeyには、サーバーの公開鍵を入れる
-- Peer.Endpointにはには、サーバーのWAN側のIPアドレスを入れる
+- `Interface.Address`には、任意のアドレスを入れる。VPN内で一意になるように管理する
+- `Peer.PublicKey`には、サーバーの公開鍵を入れる
+- `Peer.Endpoint`には、サーバーのWAN側のIPアドレスを入れる
 - サーバーにログインして、クライアントを登録する
-  - wg set wg0 peer クライアントの公開鍵 allowed-ips 上の設定に書いたクライアントのIPアドレス
+  - `wg set wg0 peer クライアントの公開鍵 allowed-ips 上の設定に書いたクライアントのIPアドレス`
 
 これで、VPN経由でインターネットにアクセスできるはず
