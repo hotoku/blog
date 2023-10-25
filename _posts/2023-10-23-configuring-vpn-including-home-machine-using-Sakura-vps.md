@@ -102,3 +102,8 @@ Endpoint = YOUR_SERVER_WAN_IP:51820
   - `wg set wg0 peer クライアントの公開鍵 allowed-ips 上の設定に書いたクライアントのIPアドレス`
 
 これで、VPN経由でインターネットにアクセスできるはず
+
+## tips
+
+- ネットワークインターフェースの停止: `sudo wg-quick down wg0`
+- ネットワークインターフェースの開始: `sudo wg-quick up wg0`
