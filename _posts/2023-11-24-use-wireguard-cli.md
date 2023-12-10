@@ -33,7 +33,8 @@ AllowedIPs = <サーバーのVPN内のIPアドレス>
 PersistentKeepalive = 25
 ```
 
+- ポートは51820
 - サーバーにログインして、`wg set wg0 peer <クライアントの公開鍵> allowed-ips <クライアントのVPN内でのIPアドレス>`を実行
 - `wg-quick down wg0`, `wg-quick up wg0`でネットワークインターフェイスを再起動
 
-これで、つながるようになった。
+このあと、クライアント側でも、`wg-quick up wg0`を実行→これで、つながるようになった。
