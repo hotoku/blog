@@ -20,4 +20,4 @@ fi
 eval "$(anyenv init -)"
 
 
-bundle exec jekyll serve --drafts --livereload
+bundle exec jekyll serve --drafts --livereload --port=14000
