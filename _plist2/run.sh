@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 
 echo args=$*
@@ -12,12 +12,5 @@ print_usage(){
 }
 
 
-if [[ -d /opt/homebrew ]]; then
-    export PATH=/opt/homebrew/bin:${PATH}
-else
-    export PATH=/usr/local/bin:${PATH}
-fi
-eval "$(anyenv init -)"
-
-
-bundle exec jekyll serve --drafts --livereload
+source $HOME/.zshrc
+bundle exec jekyll serve --drafts --livereload --port=14000
