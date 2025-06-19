@@ -2,6 +2,7 @@
 layout: post
 title: WireGuardをWidnowsで使う
 date: 2025-06-17 17:12:30 +0900
+categories: blog
 tags: it
 ---
 
