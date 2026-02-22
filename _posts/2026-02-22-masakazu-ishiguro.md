@@ -4,6 +4,7 @@ title: 石黒正数
 date: 2026-02-22 14:28:03 +0900
 categories: blog
 tags: comic life
+amazon_affiliate: true
 ---
 
 連載中の天国大魔境という漫画から、石黒正数という作家を知った。過去作品も読んだので、いくつか紹介したい。
