@@ -1439,17 +1439,19 @@ amazon_items:
 amazon_affiliate: true
 ---
 
-今日までAmazonマンガ週末祭 第一弾で、対象作品はポイント還元率が50%になっている。今回は、2010年代に連載開始になった作品が中心。
+今日までAmazonマンガ週末祭 第一弾で、対象作品はポイント還元率が50%になっている。
 
-対象作品は、こちら -> [link](https://www.amazon.co.jp/b?&node=215545470051&ref_=books_amz-books_desktop_mfs_book_deals_wish_list_personalized&tag=hotoku66-22)
+公式の対象作品一覧は -> [link](https://www.amazon.co.jp/b?&node=215545470051&ref_=books_amz-books_desktop_mfs_book_deals_wish_list_personalized&tag=hotoku66-22) 。
 
-上のリンク先から、読みたい作品を探せばよいのだけど、これは作品ごとではなく、１巻ごとに１エントリになっており、探しづらい・・・ので、各作品の1巻へのリンク一覧を作りました。以下の作品は、本日 23:59までに購入すると50%のポイントが付与されるそうです。
+なのだが、これが作品ごとではなく、１巻ごとに１エントリになっており、一覧性が低い。
+そこで、各作品の1巻へのリンク一覧を作った。
+
+以下の作品は、本日 23:59までに購入すると50%のポイントが付与される。まとめ買いの好機である。
+※ 実際に付与されるポイントは、リンク先Amazonの公式ページで、ご確認ください。確認・購入は自己責任でお願いいたします。
 
 477作品あります。かなり長いです。
 
 では、どうぞ <br> ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
-
-※ 実際に付与されるポイントは、リンク先Amazonの公式ページで、ご確認ください。確認・購入は自己責任でお願いいたします。
 
 {% for item in page.amazon_items %}
 {% include amazon-card.html asin=item.asin title=item.series_name %}
