@@ -464,9 +464,6 @@ amazon_items:
   - asin: B07PB8F9M8
     title: 不揃いの連理（１） (カドカワデジタルコミックス)
     series_name: 不揃いの連理
-  - asin: B00AENH33A
-    title: I”s<アイズ> 1 (ジャンプコミックスDIGITAL)
-    series_name: I”s<アイズ>
   - asin: B00CSOKQZK
     title: アシガール 1 (マーガレットコミックスDIGITAL)
     series_name: アシガール
@@ -1436,6 +1433,9 @@ amazon_items:
   - asin: B00UC6RMRQ
     title: 真・ギラギラ 第1巻
     series_name: 真・ギラギラ
+  - asin: B00AENH33A
+    title: I”s<アイズ> 1 (ジャンプコミックスDIGITAL)
+    series_name: I”s<アイズ>
 amazon_affiliate: true
 ---
 
@@ -1443,7 +1443,13 @@ amazon_affiliate: true
 
 対象作品は、こちら -> [link](https://www.amazon.co.jp/b?&node=215545470051&ref_=books_amz-books_desktop_mfs_book_deals_wish_list_personalized&tag=hotoku66-22)
 
-なんだけど、このページは作品ごとではなく各巻ごとにリストされているため、探しづらい。なので、各作品の1巻へのリンク一覧を作りました。以下の作品は、本日 23:59までに購入すると50%のポイントが付与されるそうです。
+上のリンク先から、読みたい作品を探せばよいのだけど、これは作品ごとではなく、１巻ごとに１エントリになっており、探しづらい・・・ので、各作品の1巻へのリンク一覧を作りました。以下の作品は、本日 23:59までに購入すると50%のポイントが付与されるそうです。
+
+477作品あります。かなり長いです。
+
+では、どうぞ <br> ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+
+※ 実際に付与されるポイントは、リンク先Amazonの公式ページで、ご確認ください。確認・購入は自己責任でお願いいたします。
 
 {% for item in page.amazon_items %}
 {% include amazon-card.html asin=item.asin title=item.series_name %}

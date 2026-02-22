@@ -1,18 +1,52 @@
-<div class="amazon-card" style="border: 1px solid #ddd; padding: 15px; border-radius: 8px; display: flex; align-items: center; margin-bottom: 20px;">
-  <div class="amazon-image" style="flex: 0 0 120px; margin-right: 15px;">
-    <a href="https://www.amazon.co.jp/dp/{{ include.asin }}/?tag=hotoku66-22" target="_blank" rel="noopener">
-      <img src="https://images-na.ssl-images-amazon.com/images/P/{{ include.asin }}.09.LZZZZZZZ.jpg" 
-           alt="{{ include.title }}" style="max-width: 100%; height: auto;">
+<div
+  class="amazon-card"
+  style="
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  "
+>
+  <div class="amazon-image" style="flex: 0 0 120px; margin-right: 15px">
+    <a
+      href="https://www.amazon.co.jp/dp/{{ include.asin }}/?tag=hotoku66-22"
+      target="_blank"
+      rel="noopener"
+    >
+      <img
+        src="https://images-na.ssl-images-amazon.com/images/P/{{ include.asin }}.09.LZZZZZZZ.jpg"
+        alt="{{ include.title | escape }}"
+        style="max-width: 100%; height: auto"
+      />
     </a>
   </div>
   <div class="amazon-info">
-    <p style="margin: 0 0 10px 0; font-weight: bold;">
-      <a href="https://www.amazon.co.jp/dp/{{ include.asin }}/?tag=hotoku66-22" target="_blank" rel="noopener" style="text-decoration: none; color: #333;">
-        {{ include.title }}
+    <p style="margin: 0 0 10px 0; font-weight: bold">
+      <a
+        href="https://www.amazon.co.jp/dp/{{ include.asin }}/?tag=hotoku66-22"
+        target="_blank"
+        rel="noopener"
+        style="text-decoration: none; color: #333"
+      >
+        {{ include.title | escape }}
       </a>
     </p>
-    <a href="https://www.amazon.co.jp/dp/{{ include.asin }}/?tag=hotoku66-22" target="_blank" rel="noopener" 
-       style="background: #f0c14b; border: 1px solid #a88734; padding: 5px 15px; border-radius: 3px; color: #111; text-decoration: none; font-size: 0.9em;">
+    <a
+      href="https://www.amazon.co.jp/dp/{{ include.asin }}/?tag=hotoku66-22"
+      target="_blank"
+      rel="noopener"
+      style="
+        background: #f0c14b;
+        border: 1px solid #a88734;
+        padding: 5px 15px;
+        border-radius: 3px;
+        color: #111;
+        text-decoration: none;
+        font-size: 0.9em;
+      "
+    >
       Amazonで見る
     </a>
   </div>
