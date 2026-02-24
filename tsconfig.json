@@ -5,9 +5,10 @@
     "sourceMap": true,
     "module": "es2020",
     "target": "es5",
-    "jsx": "react",
+    "jsx": "react-jsx",
     "allowJs": true,
     "moduleResolution": "node",
-    "lib": ["dom", "dom.iterable", "esnext"]
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "esModuleInterop": true
   }
 }
