@@ -1454,17 +1454,6 @@ amazon_affiliate: true
 
 では、どうぞ <br> ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
 
-<!-- Reactコンポーネント用のコンテナ -->
-<div id="manga-viewer-container"></div>
-
-<!-- データをJSONとして埋め込み -->
-<script type="application/json" id="manga-data">
-{{ page.amazon_items | jsonify }}
-</script>
-
-<!-- フォールバック: JavaScriptが無効な場合の表示 -->
-<noscript>
 {% for item in page.amazon_items %}
 {% include amazon-card.html asin=item.asin title=item.series_name %}
 {% endfor %}
-</noscript>

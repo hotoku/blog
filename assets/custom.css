@@ -34,3 +34,44 @@ span.k {
 span.kn {
   color: #0000ee;
 }
+
+/* Manga Viewer Styles */
+.manga-viewer {
+  max-width: 100%;
+}
+
+.manga-container.card-view {
+  display: block;
+}
+
+.manga-container.tile-view {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.manga-tile {
+  aspect-ratio: 2/3;
+  min-height: 200px;
+}
+
+.manga-tile img {
+  object-fit: cover;
+  height: 100%;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .manga-container.tile-view {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .manga-container.tile-view {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 8px;
+  }
+}
