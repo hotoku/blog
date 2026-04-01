@@ -51,6 +51,22 @@ $on-laptop: 800px !default;
 // Amazon card styles
 @media (max-width: 768px) {
   .amazon-button-mobile-hide {
-    display: none !important;
+    // モバイル向けに最適化: タッチしやすく、見やすく
+    width: 95% !important;
+    max-width: 280px !important;
+    padding: 12px 15px !important;
+    font-size: 0.9em !important;
+    margin: 10px auto 0 auto !important;
+    border-radius: 5px !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+    display: block !important;
+  }
+  
+  .amazon-card {
+    // モバイルでは1列表示
+    width: 98% !important;
+    margin: 1% !important;
+    padding: 8px !important;
   }
 }
