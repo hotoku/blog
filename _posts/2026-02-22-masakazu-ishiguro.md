@@ -11,7 +11,7 @@ amazon_affiliate: true
 
 ## それでも町は廻っている
 
-{% include amazon-card.html url="https://amzn.to/416frvI" title="それでも町は廻っている" %}
+{% include amazon-card.html asin="B00GD2GVI4" title="それでも町は廻っている" %}
 
 商店街にある、昔ながらの喫茶店「シーサイド」。外見は昭和の時代から続く（多分）古き良き喫茶店なんだけど、店主のおばあさんが、無理やりメイド喫茶に転換している。このお店が舞台のコメディ。
 
@@ -25,4 +25,4 @@ amazon_affiliate: true
 
 これは、紹介が難しい。何も聞かずに読んだ方が良い本だと思う。こういうこと言うの自体も情報になっちゃう説もあるんだけど。しかし、紹介しないことには広まらないもんな。
 
-{% include amazon-card.html url="https://amzn.to/3Qd222o" title="外天楼" %}
+{% include amazon-card.html asin="B00FGOMIYG" title="外天楼" %}
