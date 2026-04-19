@@ -2,6 +2,7 @@
 layout: page
 title: このサイトについて
 permalink: /about/
+amazon_affiliate: true
 ---
 
 私が個人的に覚えておきたいと思った事柄をメモするサイトです。他の人の役に立つものも立たないものも混じっています。
